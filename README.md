@@ -2,7 +2,7 @@
 
 A simple, deterministic password generator.
 
-Given "service name" and PIN number, generates a password using a user-supplied password generator function.
+Given a "service name" and a PIN number, generates a password using a user-supplied password generator function.
 
 <p align="center">
   <img src="screenshots/1.png" />
@@ -41,7 +41,7 @@ Tested on: Python 3.6.1, PyGObject 3.24.1, Arch GNU/Linux
 2. Edit ``dpass_generator.py``:
     1. Modify the ``SECRET`` variable.
     2. Modify the password generator function: ``generate_example``.
-    3. Rename the password generator function: ``generate_example`` to ``generate``.
+    3. Rename the password generator function ``generate_example`` to ``generate``.
 
 ## Usage
 
