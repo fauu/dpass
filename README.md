@@ -33,9 +33,9 @@ def generate_example(service_name, pin):
 ```
 
 ## Setup
-Dependencies: GTK+ 3, Python 3, PyGObject
+Dependencies: GTK+ 3, Python 3, PyGObject.
 
-Tested on: Python 3.6.1, PyGObject 3.24.1, Arch GNU/Linux
+Tested on: Python 3.6.1, PyGObject 3.24.1, Arch GNU/Linux.
 
 1. Clone the repository.
 2. Edit ``dpass_generator.py``:
