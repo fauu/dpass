@@ -143,6 +143,9 @@ def main(argv=None):
         generator = importlib.util.module_from_spec(generator_module_spec)
         generator_module_spec.loader.exec_module(generator)
 
+        if not hasattr(generator, "generate"):
+            sys.exit("Password generator module should implement a generate/2 function")
+
         if len(argv) == 3:
             run_cli(generator, argv[1], argv[2])
         elif len(argv) == 2 and argv[1] in ["-h", "--help"]:
