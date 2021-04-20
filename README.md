@@ -1,15 +1,17 @@
 # dpass
 
-A simple, deterministic password generator.
+A simple password generator.
 
-Given a "service name" and a PIN number, generates a password using a user-supplied password generator function.
+Given a “service name” string and a PIN number, it generates a password using a user-supplied password generator function.
+
+**Tip: You should use a battle-proven password manager instead of anything resembling this.**
 
 <p align="center">
   <img src="screenshots/1.png" />
 </p>
 
+An example password generator function is provided in `dpass_generator.py`:
 
-An example password generator function is provided in ``dpass_generator.py``:
 ```python
 import hashlib
 
@@ -33,27 +35,30 @@ def generate_example(service_name, pin):
 ```
 
 ## Setup
+
 Dependencies: GTK+ 3, Python 3, PyGObject.
 
 Tested on: Python 3.6.1, PyGObject 3.24.1, Arch GNU/Linux.
 
 1. Clone the repository.
-2. Edit ``dpass_generator.py``:
-    1. Modify the ``SECRET`` variable.
-    2. Modify the password generator function: ``generate_example``.
-    3. Rename the password generator function ``generate_example`` to ``generate``.
+2. Edit `dpass_generator.py`:
+   1. Modify the `SECRET` variable.
+   2. Modify the password generator function: `generate_example`.
+   3. Rename the password generator function `generate_example` to `generate`.
 
 ## Usage
 
 ### CLI
-1. Run ``python dpass.py SERVICE_NAME PIN``.
 
-The generated password is printed to STDOUT.
+1. Run `python dpass.py SERVICE_NAME PIN`.
+
+The generated password is printed to `stdout`.
 
 ### GUI
-1. Run ``python dpass.py``
-2. Fill ``Service name`` field. If there is text present in system clipboard, it is automatically entered into this field at application start.
-3. Fill ``PIN`` field with a four-digit number of choice.
-4. Press ``RETURN`` or click the ``Generate`` button.
 
-The generated password is placed in the bottom input field. It is selected and copied to system clipboard automatically. The application exits after 3 seconds have passed.
+1. Run `python dpass.py`
+2. Fill `Service name` field. If there is text present in system clipboard, it is automatically entered into this field at application start.
+3. Fill `PIN` field with a four-digit number of choice.
+4. Press `RETURN` or click the `Generate` button.
+
+The generated password is placed in the bottom input field. It is selected and copied to system clipboard automatically. The application waits 3 seconds and exits.
